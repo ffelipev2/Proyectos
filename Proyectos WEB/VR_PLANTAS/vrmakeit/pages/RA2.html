@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    </head>
+    <body>
+    <a-scene>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+        <a-assets>
+            <a-asset-item id="skull-model" src="scene.gltf" crossOrigin="anonymous"></a-asset-item> 
+        </a-assets>
+        <a-gltf-model src="#skull-model" position="0 2 -3"></a-gltf-model>
+
+        <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+</body>
+</html>
+
+
+
+
+<!--
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+        <script src="js/aframe/build/aframe-ar.js" type="text/javascript"></script>
+
+    </head>
+    <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs>
+
+        <a-box position='0 0.5 0' material='opacity: 0.5; side:double; color:red;'>
+            <a-torus-knot radius='0.26' radius-tubular='0.05'
+                          animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
+            </a-torus-knot>
+        </a-box>
+        <a-marker-camera  type = 'pattern'  url = 'volcan.patt' > </a-marker-camera >
+    </a-scene>
+
+</body>
+</html>
+-->

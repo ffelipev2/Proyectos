@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0">
+        <title>Maps JavaScript API</title>
+        <style> 
+            #map {
+                height: 100%;
+            }
+
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style> 
+    </head>  
+    <body>
+        <div id ="map"> </div> 
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlrJUHhT5zlhePzsTf1PJdD3QeXrZsRSU&callback=initMap" async defer></script>
+        <script>
+
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -33.4340757, lng: -70.6382635},
+                    zoom: 5,
+                });
+                var marker1 = new google.maps.Marker({
+                    position: {lat: -33.4345153, lng: -70.6382635},
+                    map: map,
+                    title: 'Universidad San Sebastían Bellavista',
+                    draggable: false
+                });
+                var marker2 = new google.maps.Marker({
+                    position: {lat: -36.812789, lng: -73.0433907},
+                    map: map,
+                    title: 'Universidad San Sebastían Concepción',
+                    draggable: false
+                });
+                var marker3 = new google.maps.Marker({
+                    position: {lat: -39.8214463, lng: -73.2503601},
+                    map: map,
+                    title: 'Universidad San Sebastían Valdivia',
+                    draggable: false
+                });
+                var marker4 = new google.maps.Marker({
+                    position: {lat: -41.4698641, lng: -72.9084709},
+                    map: map,
+                    title: 'Universidad San Sebastían Puerto Montt',
+                    draggable: false
+                });
+
+                marker1.addListener('click', function () {
+                    //map.setZoom(4);
+                    //map.setCenter(marker.getPosition());
+                    window.location.href = 'pages/video_360.html';
+                });
+                marker2.addListener('click', function () {
+                    //map.setZoom(4);
+                    //map.setCenter(marker.getPosition());
+                    window.location.href = 'pages/RA.html';
+                });
+                marker3.addListener('click', function () {
+                    //map.setZoom(4);
+                    //map.setCenter(marker.getPosition());
+                    window.location.href = 'pages/foto360.html';
+                });
+                marker4.addListener('click', function () {
+                    //map.setZoom(4);
+                    //map.setCenter(marker.getPosition());
+                    window.location.href = 'pages/foto3602.html';
+                });
+
+                /*
+                 var delayInMilliseconds = 2000; //1 second
+                 setTimeout(function () {
+                 //your code to be executed after 1 second
+                 }, delayInMilliseconds);
+                 */
+
+
+            }
+            marker1.setMap(map);
+            marker2.setMap(map);
+            marker3.setMap(map);
+            marker4.setMap(map);
+
+        </script>
+
+    </body> 
+</html>
