@@ -1,0 +1,8 @@
+- Instalar CH340 
+- Incluir las siguientes direcciones en el apartado de preferencias
+	1 -http://arduino.esp8266.com/stable/package_esp8266com_index.json
+	2 -https://docs.heltec.cn/download/package_heltec_esp32_index.json
+
+- Buscar en el gestor de tarjetas, esp32 y heltec e instalar
+- Buscar en el gestor de librerias esp32 y heltec e instalar
+ 
