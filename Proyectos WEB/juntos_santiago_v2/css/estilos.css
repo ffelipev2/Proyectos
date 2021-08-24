@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+body, body a, h1, h2, h3, h4, h5, h6{
+       font-family: 'Nunito', sans-serif;
+       font-weight: bold;
+       color:#4d4d4d;
+}
+
+.sticky .menu ul li a {
+    padding: 1px 3px;
+}
+.sticky .logo {
+    padding: 0px 0;
+}
+
+.menu ul li ul.dropdown_menu li a, {
+    font-family: "Nunito",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 20px;
+    text-transform: capitalize;
+}
+
+.menu ul li a {
+    color: #4d4d4d;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 3px;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+.menu ul li a:hover {
+  background-color: #1d70b6;
+  color: #f0f0f0;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+    background-color: #1d70b6;
+    color: #f0f0f0;
+}
+::selection {
+    background: #fff;
+    color: #4d4d4d;
+    text-shadow: none;
+}
+/*.menu ul li:hover a{
+    background: #fff;
+    color: #4d4d4d;
+}*/
+.menu ul li:hover ul li a:hover {
+    background-color: #1d70b6;
+  color: #f0f0f0;
+
+}
+.active{
+      background-color: #1d70b6;
+       color: #f0f0f0 !important; 
+}
+.menu ul li ul.dropdown_menu {
+    border-bottom: 4px solid #1d70b6;
+}
+
+.title-1 h1 {
+    color: #1d70b6;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 48px;
+    /*margin-bottom:0px;*/
+    text-transform: capitalize;
+}
+.title-slider{
+margin-bottom: 500px !important;
+margin-left:100px !important; 
+}
+/*@media (max-width: 1566px) and (min-width: 1037px){
+.title-slider{
+margin-bottom: 800px !important;
+margin-right:800px !important; 
+}
+}
+@media (max-width: 1036px) and (min-width: 992px){
+     .title-slider{
+margin-bottom: 0px !important;
+margin-right:0px !important; 
+}
+}
+
+*/
+
+
+.logo{
+       padding: 10px 0;
+}
+.mobile-menu-area{
+       margin-top: 40px;
+}
+
+
+.dropdown-submenu{
+       position: relative;
+}
+.dropdown-submenu a::after{
+       transform: rotate(-90deg);
+       position: absolute;
+       right: 3px;
+       top: 40%;
+}
+.dropdown-submenu:hover .dropdown-menu, .dropdown-submenu:focus .dropdown-menu{
+       display: flex;
+       flex-direction: column;
+       position: absolute !important;
+       margin-top: -30px;
+       left: 100%;
+}
+/* @media (max-width: 992px) {
+       .dropdown-menu{
+           width: 50%;
+       }
+       .dropdown-menu .dropdown-submenu{
+           width: auto;
+       } */
+/* 
+@media (max-width: 1566px) and (min-width: 1288px){
+        .menu ul li a {
+            font-size: 11px !important;
+}
+}
+@media (max-width: 1287px) and (min-width: 1037px){
+       .menu ul li a {
+           font-size: 10px !important;
+       }
+}
+@media (max-width: 1036px) and (min-width: 992px){
+       .menu ul li a {
+           font-size: 9px !important;
+       }
+} */
+.menu ul li {
+    padding-left: 20px;
+}
+.menu ul li a {
+    font-size: 0.9vw !important;
+}
+.slider-content.parallax {
+       background: url(../images/slider/saludable.jpg) no-repeat fixed center center / cover !important;
+       }
+       
+.slider-content {
+              background: url(../images/slider/saludable.jpg) no-repeat scroll center center / cover !important;
+              padding: 290px 0;
+              z-index: 9;
+          }
+.slider-img{
+       filter: opacity(.8);}
+
+.breadcrumbs-fisica {
+              background: rgba(0, 0, 0, 0) url(../images/header_pages/actividad_fisica_3.jpg) no-repeat center center !important;
+              background-size: cover;
+       }
+.breadcrumbs-title > h2 {
+opacity:0,9 !important;   
+}
+.owl-wrapper-outer{
+       align-self: center !important;
+}
+
+.colaboradores .titulo {
+       margin-top: 100px !important;
+       margin-bottom: 50px ;
+}
+.colaboradores img{
+       margin-bottom: 30px ;
+}
+.link-makeit{
+    color: #6EC71B;
+}
+.link-makeit:hover{
+    color: #1D70B6;
+}
+#scrollUp:hover{
+    background-color:#1D70B6;
+}
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+ 
+.texto-encima{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-check-input {
+       position: absolute !important;
+       margin-top: .05rem !important;
+       margin-left: 0.5rem !important;
+   }
+   .form-check-label {
+       margin-bottom: 0 !important;
+       margin-left: 1.5rem;
+   }
+   .form-check {
+          padding: 0.5rem;
+   }
+   
+   .btn-conocenos{
+    font-size: 0.9vw !important;
+    border: 1px solid #6bc513;
+    border-radius: 5px;
+    background-color: #6bc513;
+    color: #f0f0f0 !important;
+   }
+   .btn-conocenos:hover{
+       background-color: #1d70b6;
+       color: #f0f0f0;
+   }
+
+   .owl_pagination.owl-theme .owl-controls .owl-page.active span, .home-slider-list.owl-carousel .owl-controls .owl-page.active span {
+    background:  #1d70b6 none repeat scroll 0 0;
+    border: 3px solid #1d70b6;
+    height: 16px;
+    width: 16px;
+}
+
+.owl_pagination.owl-theme .owl-controls .owl-page span, .home-slider-list.owl-carousel .owl-controls .owl-page span {
+    background: #fff none repeat scroll 0 0;
+    height: 14px;
+    margin: 0 4px;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    width: 14px;
+    border: 3px solid #1d70b6;
+}
+.slider-container .active{
+     background: transparent none repeat scroll 0 0;
+}
+
+.btn-modulos{
+    font-family: "Nunito",sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #ffffff;
+    background:#37a6de;
+    margin: 25px 0px;
+    border-radius: 10px;
+    padding: 5px 50px 5px 50px;
+    height: auto;
+}
+
+.lw_case{
+    text-transform: lowercase !important;
+}
