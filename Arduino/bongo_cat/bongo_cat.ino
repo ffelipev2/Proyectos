@@ -1,5 +1,4 @@
-// This example just provide basic function test;
-// For more informations, please vist www.heltec.cn or mail to support@heltec.cn
+// Felipe Flores
 
 #include <Wire.h>  // Only needed for Arduino 1.6.5 and earlier
 #include "heltec.h" // alias for `#include "SSD1306Wire.h"`
@@ -98,7 +97,7 @@ void loop() {
     Heltec.display->drawString(60, 52, String(contador));
     Heltec.display->display();
     
-    delay(150);
+    //delay(100);
     estado_1 = false;
     estado_2 = true;
   }
@@ -112,7 +111,7 @@ void loop() {
     Heltec.display->drawString(60, 52, String(contador));
     Heltec.display->display();
     
-    delay(150);
+    //delay(100);
     estado_1 = true;
     estado_2 = false;
   }
@@ -126,7 +125,7 @@ void loop() {
     Heltec.display->drawString(25, 52, "Contador: ");
     Heltec.display->drawString(60, 52, String(contador));
     Heltec.display->display();
-    delay(100);
+    //delay(100);
     Heltec.display->clear();
     demos[1]();
     Heltec.display->setTextAlignment(TEXT_ALIGN_CENTER);
@@ -134,7 +133,7 @@ void loop() {
     Heltec.display->drawString(60, 52, String(contador));
     Heltec.display->display();
     contador++;
-    delay(100);
+    //delay(100);
     //Serial.print("Hola");
   }
   //Serial.print("Hola");
