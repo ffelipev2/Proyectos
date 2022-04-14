@@ -12,15 +12,21 @@ typedef void (*Demo)(void);
 int demoMode = 0;
 int contador = 0;
 int incomingByte = 0;
+int pul_1 = 37;
+int pul_2 = 38;
+boolean estado_1 = true;
+boolean estado_2 = true;
 
 void setup() {
+  pinMode(pul_1, INPUT);
+  pinMode(pul_2, INPUT);
   Heltec.begin(true /*DisplayEnable Enable*/, true /*Serial Enable*/);
   Heltec.display->flipScreenVertically();
   Heltec.display->setFont(ArialMT_Plain_10);
   Heltec.display->clear();
   Heltec.display->drawXbm(0, 0, WiFi_Logo_width, WiFi_Logo_height, gato_1);
   Heltec.display->setTextAlignment(TEXT_ALIGN_CENTER);
-  Heltec.display->drawString(20, 52, "Letras: ");
+  Heltec.display->drawString(25, 52, "Contador: ");
   Heltec.display->drawString(60, 52, String(contador));
   Heltec.display->display();
 
@@ -82,6 +88,34 @@ long timeSinceLastModeSwitch = 0;
 
 void loop() {
   int incomingByte = 0;
+  if (digitalRead(pul_1) == HIGH && estado_1 == true) {
+    //Serial.print("Hola");
+    contador++;
+    Heltec.display->clear();
+    demos[0]();
+    Heltec.display->setTextAlignment(TEXT_ALIGN_CENTER);
+    Heltec.display->drawString(25, 52, "Contador: ");
+    Heltec.display->drawString(60, 52, String(contador));
+    Heltec.display->display();
+    
+    delay(150);
+    estado_1 = false;
+    estado_2 = true;
+  }
+  if (digitalRead(pul_2) == HIGH && estado_2 == true) {
+    //Serial.print("Hola");
+    contador++;
+    Heltec.display->clear();
+    demos[1]();
+    Heltec.display->setTextAlignment(TEXT_ALIGN_CENTER);
+    Heltec.display->drawString(25, 52, "Contador: ");
+    Heltec.display->drawString(60, 52, String(contador));
+    Heltec.display->display();
+    
+    delay(150);
+    estado_1 = true;
+    estado_2 = false;
+  }
   // send data only when you receive data:
   if (Serial.available() > 0) {
     // read the incoming byte:
@@ -89,19 +123,19 @@ void loop() {
     Heltec.display->clear();
     demos[0]();
     Heltec.display->setTextAlignment(TEXT_ALIGN_CENTER);
-    Heltec.display->drawString(20, 52, "Letras: ");
+    Heltec.display->drawString(25, 52, "Contador: ");
     Heltec.display->drawString(60, 52, String(contador));
     Heltec.display->display();
     delay(100);
     Heltec.display->clear();
     demos[1]();
     Heltec.display->setTextAlignment(TEXT_ALIGN_CENTER);
-    Heltec.display->drawString(20, 52, "Letras: ");
+    Heltec.display->drawString(25, 52, "Contador: ");
     Heltec.display->drawString(60, 52, String(contador));
     Heltec.display->display();
     contador++;
     delay(100);
-    Serial.print("Hola");
+    //Serial.print("Hola");
   }
   //Serial.print("Hola");
 }
