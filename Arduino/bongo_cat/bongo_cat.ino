@@ -20,7 +20,7 @@ void setup() {
   pinMode(pul_1, INPUT);
   pinMode(pul_2, INPUT);
   Heltec.begin(true /*DisplayEnable Enable*/, true /*Serial Enable*/);
-  Heltec.display->flipScreenVertically();
+  //Heltec.display->flipScreenVertically();
   Heltec.display->setFont(ArialMT_Plain_10);
   Heltec.display->clear();
   Heltec.display->drawXbm(0, 0, WiFi_Logo_width, WiFi_Logo_height, gato_1);
