@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actuadores</title>
+</head>
+<body>
+  <h1>Control de Actuadores</h1>
+  <button onclick="encenderLED()">Encender LED</button>
+  <button onclick="apagarLED()">Apagar LED</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    function encenderLED() {
+      socket.emit('encender');
+    }
+
+    function apagarLED() {
+      socket.emit('apagar');
+    }
+  </script>
+</body>
+</html>

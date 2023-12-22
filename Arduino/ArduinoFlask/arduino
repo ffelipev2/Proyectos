@@ -1,17 +1,34 @@
+const int ledPin = 13;  // Pin al que está conectado el LED
+
 void setup() {
-
   Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);  // Configurar el pin del LED como salida
+}
 
+void controlarLED(bool encender) {
+  if (encender) {
+    digitalWrite(ledPin, HIGH);  // Encender el LED
+  } else {
+    digitalWrite(ledPin, LOW);   // Apagar el LED
+  }
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  if (Serial.available() > 0) {
+    char comando = Serial.read();
+    if (comando == '1') {
+      controlarLED(true);  // Encender el LED
+    } else if (comando == '0') {
+      controlarLED(false);  // Apagar el LED
+    }
+  }
+
   int reading = analogRead(A0);
-  // Convert the reading into voltage:
   float voltage = reading * (5000 / 1024.0);
-  // Convert the voltage into the temperature in degree Celsius:
   float temperature = voltage / 10;
-  // Print the temperature in the Serial Monitor:
-  Serial.println(temperature);
-  delay(1000); // wait a second between readings
+  Serial.print(temperature);
+  Serial.print(",");
+  Serial.println(temperature/2);
+
+  delay(1000);
 }

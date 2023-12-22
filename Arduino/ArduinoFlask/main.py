@@ -16,19 +16,24 @@ app.config['SECRET_KEY'] = 'secret!'
 
 ser =Serial(app)
 socketio = SocketIO(app)
-
 @app.route('/')
 def index():
     return render_template('index.html')
-
+@socketio.on('encender')
+def encender_led():
+    ser.on_send(b'1')  # Envia '1' al Arduino para encender el LED
+@socketio.on('apagar')
+def apagar_led():
+    ser.on_send(b'0')  # Envia '0' al Arduino para apagar el LED
+@app.route('/actuadores')
+def actuadores():
+    return render_template('actuadores.html')
 @ser.on_message()
 def handle_message(medida):
     medida = medida.decode().replace('\r','').replace('\n','')
     parte1, parte2 = map(float, medida.split(','))
     print(parte1)
     print(parte2)
-    #socketio.emit('data',str(parte1))
-    #socketio.emit('data2', str(parte2))
     socketio.emit('data', {'parte1': parte1, 'parte2': parte2})
 
 if __name__ == '__main__':
