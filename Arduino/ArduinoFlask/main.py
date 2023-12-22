@@ -27,8 +27,9 @@ def handle_message(medida):
     parte1, parte2 = map(float, medida.split(','))
     print(parte1)
     print(parte2)
-    socketio.emit('data',str(parte1))
-    socketio.emit('data2', str(parte2))
+    #socketio.emit('data',str(parte1))
+    #socketio.emit('data2', str(parte2))
+    socketio.emit('data', {'parte1': parte1, 'parte2': parte2})
 
 if __name__ == '__main__':
     socketio.run(app,debug =False)
