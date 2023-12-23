@@ -1,6 +1,9 @@
 /* static/style.css */
+
 body {
     background-color: #f8f9fa;
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    font-family: 'Arial', sans-serif; /* Añade una fuente de respaldo */
 }
 
 .container {
@@ -8,8 +11,15 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centra el contenedor horizontalmente y proporciona espacio en la parte superior e inferior */
+    max-width: 1200px; /* Establece un ancho máximo para mejorar la legibilidad en pantallas más grandes */
 }
 
 #chartContainer {
     margin-top: 20px;
+}
+
+/* Agrega reglas de estilo para los botones */
+.btn {
+    margin-top: 10px;
 }

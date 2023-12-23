@@ -4,23 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Panel Datos Lab 4.0</title>
-
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Tu CSS personalizado -->
     <link rel="stylesheet" type="text/css" href="static/style.css">
-
     <!-- jQuery and Socket.IO -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-oP6HI/t1p1l+5Bgh3N1UVa/kb95JS9EX5fzbIf5LBRQ= sha512-8tF/kOy3m7sNHdvh3Z8CB7Tn3altl6o6ao2Xu9n1RQl+OjZZ6hQdbg52/1JcYSHnEWOM8E5Y2H0ZAl3MKdR1FQ==" crossorigin="anonymous"></script>
     <script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
-
-    <!-- Tu script JavaScript -->
-    <script src="static/script.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Lab 4.0</a>
+
+        <a class="navbar-brand" href="#">Lab 4.0  </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,20 +25,23 @@
                     <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Sensores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="actuadores.html">Actuadores</a>
+                    <a class="nav-link" href="#">Sensores y Actuadores</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <h1>Panel Datos Lab 4.0</h1>
+    <div class="container mt-4 text-center">
+        <h1>Panel Datos Lab 4.0 </h1>
+        <img src="static/img/logo.png" alt="Logo" width="120" height="120" class="d-inline-block align-top">
         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
         <div class="mt-4">
             <h2 id="parte2">Dato:</h2>
+            <h1>Control de Actuadores</h1>
+            <div class="d-flex justify-content-center">
+                <button onclick="encenderLED()" class="btn btn-primary btn-lg mr-3">Encender LED</button>
+                <button onclick="apagarLED()" class="btn btn-danger btn-lg">Apagar LED</button>
+            </div><br><br>
             <p>Felipe Flores</p>
             <p>Lab 4.0</p>
         </div>
@@ -51,9 +49,10 @@
 
     <!-- CanvasJS -->
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="static/script.js"></script>
 
     <!-- Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-oP6HI/t1p1l+5Bgh3N1UVa/kb95JS9EX5fzbIf5LBRQ= sha512-8tF/kOy3m7sNHdvh3Z8CB7Tn3altl6o6ao2Xu9n1RQl+OjZZ6hQdbg52/1JcYSHnEWOM8E5Y2H0ZAl3MKdR1FQ==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-ggOyR0iXCbMQv3Xipma4LSTmaA9gCbdQCnAEwF6VcF2AwoVjTw8A+gF6G30MSSx" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

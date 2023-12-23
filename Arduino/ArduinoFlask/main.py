@@ -7,8 +7,8 @@ monkey_patch()
 
 app = Flask(__name__)
 app.config['SERIAL_TIMEOUT'] = 0.2
-app.config['SERIAL_PORT'] = 'COM3'
-app.config['SERIAL_BAUDRATE'] = 9600
+app.config['SERIAL_PORT'] = 'COM4'
+app.config['SERIAL_BAUDRATE'] = 115200
 app.config['SERIAL_BYTESIZE'] = 8
 app.config['SERIAL_PARITY'] = 'N'
 app.config['SERIAL_STOPBITS'] = 1
@@ -25,16 +25,17 @@ def encender_led():
 @socketio.on('apagar')
 def apagar_led():
     ser.on_send(b'0')  # Envia '0' al Arduino para apagar el LED
-@app.route('/actuadores')
-def actuadores():
-    return render_template('actuadores.html')
 @ser.on_message()
 def handle_message(medida):
-    medida = medida.decode().replace('\r','').replace('\n','')
-    parte1, parte2 = map(float, medida.split(','))
-    print(parte1)
-    print(parte2)
-    socketio.emit('data', {'parte1': parte1, 'parte2': parte2})
+    medida = medida.decode().replace('\r', '').replace('\n', '').replace(' ','')
+    datos = list(map(int, medida.split(',')))
+    sensor_id = int(datos[0])
+    if sensor_id == 2:
+        socketio.emit('data', {'parte1': datos[0], 'parte2': datos[1]})
+        print(datos[0],",",datos[1])
+    elif sensor_id == 1:
+        socketio.emit('data', {'parte1': datos[0], 'parte2': datos[1], 'parte3': datos[2]})
+        print(datos[0], ",", datos[1],",", datos[2])
 
 if __name__ == '__main__':
     socketio.run(app,debug =False)

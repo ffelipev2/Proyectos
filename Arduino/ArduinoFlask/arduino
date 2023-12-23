@@ -1,15 +1,31 @@
-const int ledPin = 13;  // Pin al que está conectado el LED
+#include <DHT11.h>
+
+const int ledPin = 4;    // Pin al que está conectado el LED
+const int Trigger = 14;  // D5
+const int Echo = 12;     // D6
+DHT11 dht11(2);
+float Temperature;
+float Humidity;
+
+unsigned long previousDistanceMillis = 0;     // Variable para el seguimiento del tiempo de envío de la distancia
+unsigned long previousTemperatureMillis = 0;  // Variable para el seguimiento del tiempo de envío de la temperatura
+const long distanceInterval = 500;            // Intervalo de envío de la distancia en milisegundos (0.5 segundos)
+const long temperatureInterval = 10000;       // Intervalo de envío de la temperatura en milisegundos (20 segundos)
+
 
 void setup() {
-  Serial.begin(9600);
-  pinMode(ledPin, OUTPUT);  // Configurar el pin del LED como salida
+  Serial.begin(115200);
+  pinMode(4, OUTPUT);  // D2
+  pinMode(Trigger, OUTPUT);
+  pinMode(Echo, INPUT);
+  digitalWrite(Trigger, LOW);
 }
 
 void controlarLED(bool encender) {
   if (encender) {
     digitalWrite(ledPin, HIGH);  // Encender el LED
   } else {
-    digitalWrite(ledPin, LOW);   // Apagar el LED
+    digitalWrite(ledPin, LOW);  // Apagar el LED
   }
 }
 
@@ -23,12 +39,42 @@ void loop() {
     }
   }
 
-  int reading = analogRead(A0);
-  float voltage = reading * (5000 / 1024.0);
-  float temperature = voltage / 10;
-  Serial.print(temperature);
-  Serial.print(",");
-  Serial.println(temperature/2);
+  unsigned long currentMillis = millis();  // Obtener el tiempo actual
+  int temperature = dht11.readTemperature();
+  int humidity = dht11.readHumidity();
 
-  delay(1000);
+  if (currentMillis - previousTemperatureMillis >= temperatureInterval) {
+    // Guardar el tiempo actual
+    previousTemperatureMillis = currentMillis;
+    // Realizar la medición de temperatura y humedad
+    if (temperature != DHT11::ERROR_CHECKSUM && temperature != DHT11::ERROR_TIMEOUT && humidity != DHT11::ERROR_CHECKSUM && humidity != DHT11::ERROR_TIMEOUT) {
+      Serial.print(1);
+      Serial.print(",");
+      Serial.print(temperature);
+      Serial.print(",");
+      Serial.println(humidity);
+    } else {
+      temperature = 0.0;
+      humidity = 0.0;
+    }
+    delay(1000);
+  }
+  // Realizar la medición de distancia cada 0.5 segundos
+  if (currentMillis - previousDistanceMillis >= distanceInterval) {
+    previousDistanceMillis = currentMillis;
+
+    // Realizar la medición de distancia
+    long t;  // Tiempo de regreso
+    long d;  // Distancia en centímetros
+    digitalWrite(Trigger, HIGH);
+    delayMicroseconds(10);  // Se envía un pulso de 10us
+    digitalWrite(Trigger, LOW);
+    t = pulseIn(Echo, HIGH);
+    d = t / 59;  // Se obtiene la distancia en centímetros
+
+    // Enviar los datos de distancia por el puerto serie
+    Serial.print(2);
+    Serial.print(",");
+    Serial.println(d);
+  }
 }
