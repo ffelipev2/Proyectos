@@ -1,0 +1,9 @@
+Pregunta: Quienes trabajan en el laboratorio de industria 4.0
+Respuesta: En el laboratorio de industria 4.0 trabaja Claudio Carreño y Felipe Flores quienes son encargados del laboratorio.
+----
+Pregunta: Describe los equipamientos de realidad aumentada y virtual de los laboratorios de la industría 4.0
+Respuesta: El laboratorio cuenta con 2 oculus quest 2 y un oculus quest 3 para experiencias en RV y RA
+----
+Pregunta: Que equipamiento de robótica articulada hay en el laboratorio
+Respuesta: El laboratorio cuenta con un brazo robótico semi industrial de la marca U factory que es capaz de levantar hasta 1kg
+y cuenta con 6 ejes de rotación. También , cuenta con un brazo robótico educativos DOBOT

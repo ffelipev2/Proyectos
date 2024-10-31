@@ -2,7 +2,7 @@ from flask import Flask,render_template
 from flask_socketio import SocketIO
 from flask_serial import Serial
 from eventlet import monkey_patch
-
+#taskkill /f /im ngrok.exe
 monkey_patch()
 
 app = Flask(__name__)
