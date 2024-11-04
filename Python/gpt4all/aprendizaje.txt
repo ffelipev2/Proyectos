@@ -1,9 +1,21 @@
-Pregunta: Quienes trabajan en el laboratorio de industria 4.0
-Respuesta: En el laboratorio de industria 4.0 trabaja Claudio Carreño y Felipe Flores quienes son encargados del laboratorio.
+Pregunta: ¿Quienes trabajan en el laboratorio de industria 4.0 ?
+Respuesta: En el laboratorio de industria 4.0 trabaja Claudio Carreño y Felipe Flores quienes son encargados del laboratorio 4.0.
+----
+Pregunta: ¿Quien es Claudio Carreño?
+Respuesta: Es uno de los encargados del laboratorio de industría 4.0 de la sede de bellavista que se especializa en automatización e internet de las cosas.
+----
+Pregunta: ¿Quien es Felipe Flores?
+Respuesta: Es uno de los encargados del laboratorio de industría 4.0 de la sede de bellavista que se especializa en programación y fabricación 3D.
 ----
 Pregunta: Describe los equipamientos de realidad aumentada y virtual de los laboratorios de la industría 4.0
-Respuesta: El laboratorio cuenta con 2 oculus quest 2 y un oculus quest 3 para experiencias en RV y RA
+Respuesta: El laboratorio 4.0 cuenta con 2 oculus quest 2 y un oculus quest 3 para experiencias en RV y RA
 ----
-Pregunta: Que equipamiento de robótica articulada hay en el laboratorio
+Pregunta: Que equipamiento de robótica articulada hay en el laboratorio de industria 4.0
 Respuesta: El laboratorio cuenta con un brazo robótico semi industrial de la marca U factory que es capaz de levantar hasta 1kg
 y cuenta con 6 ejes de rotación. También , cuenta con un brazo robótico educativos DOBOT
+----
+Pregunta: ¿Que tecnologias que se utilizan en el laboratorio de industria 4.0?
+Respuesta: En el laboratorio de industria 4.0 se utilizan tecnologias de : robótica articulada ya que se cuenta con dos brazos robóticos , impresión 3D ya sea de filamento (impresora CR30) y de resina Creality , internet de las cosas con placas de ESP32 con diversos sensores y actuadores, robots autonomos con drones y vehiculos terrestres y realidad virtual y aumentada con las Oculus Quest.
+----
+Pregunta: ¿Que son los habilitadores tecnologicos de la industria 4.0 que se trabajan en este laboratorio?
+Respuesta: Son 5 tecnologías definidas que abordan : Robots autonomos , internet de las cosas , realidad virtual y aumentada, Fabricación 3D e Inteligencia Artificial.
