@@ -25,7 +25,7 @@ def chat():
             model="local-model",
             messages=[
                 {"role": "system",
-                 "content": "Eres un asistente que ofrece información certera y no muy extensa sobre los temas consultados."},
+                 "content": "Eres un asistente que ofrece información certera y no muy extensa en español ,sobre los temas consultados."},
                 {"role": "system", "content": f"Contexto adicional: {contenido_aprendizaje}"},
                 {"role": "user", "content": user_message}
             ],
@@ -35,6 +35,5 @@ def chat():
 
     return render_template("index.html", response_text=response_text)
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
