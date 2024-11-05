@@ -17,5 +17,5 @@ y cuenta con 6 ejes de rotación. También , cuenta con un brazo robótico educativ
 Pregunta: ¿Que tecnologias que se utilizan en el laboratorio de industria 4.0?
 Respuesta: En el laboratorio de industria 4.0 se utilizan tecnologias de : robótica articulada ya que se cuenta con dos brazos robóticos , impresión 3D ya sea de filamento (impresora CR30) y de resina Creality , internet de las cosas con placas de ESP32 con diversos sensores y actuadores, robots autonomos con drones y vehiculos terrestres y realidad virtual y aumentada con las Oculus Quest.
 ----
-Pregunta: ¿Que son los habilitadores tecnologicos de la industria 4.0 que se trabajan en este laboratorio?
+Pregunta: ¿Cuales son los habilitadores tecnologicos de la industria 4.0 que se trabajan en este laboratorio?
 Respuesta: Son 5 tecnologías definidas que abordan : Robots autonomos , internet de las cosas , realidad virtual y aumentada, Fabricación 3D e Inteligencia Artificial.

@@ -1,21 +1,5 @@
 let audioInterval; // Variable para almacenar el intervalo de animación de las barras
 
-// Agregar event listener para las teclas
-document.addEventListener('keydown', function(event) {
-    // Verificar si la tecla presionada es 'q' o 'Q'
-    if (event.key.toLowerCase() === 'q') {
-        activarMicrofono();
-    }
-    // Verificar si la tecla presionada es 'w' o 'W'
-    else if (event.key.toLowerCase() === 'w') {
-        const form = document.querySelector("form");
-        if (form) {
-            mostrarCargando();
-            form.requestSubmit(); // Usar requestSubmit en lugar de submit() para trigger los event listeners
-        }
-    }
-});
-
 function leerRespuesta() {
     const respuesta = document.getElementById("response_text").innerText.trim();
 

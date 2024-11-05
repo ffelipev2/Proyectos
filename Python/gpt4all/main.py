@@ -4,8 +4,8 @@ from openai import OpenAI
 app = Flask(__name__)
 
 # Configura el cliente que apunta a la dirección de tu modelo local
-client = OpenAI(base_url="http://192.168.1.245:1234/v1", api_key="not-needed")
-
+#client = OpenAI(base_url="http://192.168.1.245:1234/v1", api_key="not-needed")
+client = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed")
 
 # Función para leer el archivo .txt
 def cargar_texto_desde_archivo(ruta_archivo):
